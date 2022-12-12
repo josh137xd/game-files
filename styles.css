@@ -1,0 +1,43 @@
+.game {
+ width: 1000px; 
+ height: 567px; 
+ border: 1px solid black;
+ margin: auto;
+}
+#city{
+    position: absolute;
+}
+#pochita {
+ width: 75px; 
+ height: 53px; 
+ background-image: url(assets\pochita-resized.gif);
+ background-size: 75px 53px;
+ position: relative;
+ top: 440px;
+}
+
+.jump {
+    animation: jump 0.3s linear;
+}
+
+
+@keyframes jump{
+  0% {
+    top: 440px;
+  }
+
+  30%{
+    top: 420px;
+  }
+  50%{
+    top: 370px;
+  }
+
+  80%{
+    top: 420px;
+  }
+
+  100%{
+    top: 440px
+  }
+}
