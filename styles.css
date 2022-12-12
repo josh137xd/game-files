@@ -10,11 +10,16 @@
 #pochita {
  width: 75px; 
  height: 53px; 
- background-image: url(assets\pochita-resized.gif);
+ background-image: url(assets\pochita.gif);
  background-size: 75px 53px;
  position: relative;
  top: 440px;
+
 }
+#gif {
+    width: 75px;
+    height: 53px;
+  }
 
 .jump {
     animation: jump 0.3s linear;
@@ -27,17 +32,49 @@
   }
 
   30%{
-    top: 420px;
+    top: 400px;
   }
   50%{
-    top: 370px;
+    top: 340px;
   }
 
   80%{
-    top: 420px;
+    top: 400px;
   }
 
   100%{
     top: 440px
   }
+}
+
+
+ #cone {
+  width: 50px;
+  height: 75px;
+  position: relative;
+  top: 360px;
+  left: 950px;
+  background-image: url(assets\traffic-cone.png) ;
+  background-size: 50px 75px;
+  animation: block 3s infinite linear;
+}
+#pixel-cone{
+width: 50px;;
+height: 75px;
+}
+@keyframes block{
+   0%{
+    left: 950px;
+   }
+100%{
+    left: -50px;
+}
+
+
+
+
+
+
+
+
 }
