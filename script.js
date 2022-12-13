@@ -1,4 +1,5 @@
-let score = 0
+var score = 0;
+//const scoreElem = document.querySelector("[data-score]");
 const pochita = document.getElementById("pochita");
 const cone = document.getElementById("cone");
 // function jump to add jump delay
@@ -28,16 +29,19 @@ let isAlive = setInterval(function(){
    let coneLeft = parseInt(window.getComputedStyle(cone).getPropertyValue("left")
    );
 // hit markers
-   if (coneLeft <50 && coneLeft > 0 && pochitaTop >=430){
+   if (coneLeft <240 && coneLeft > 190 && pochitaTop >=430){
    alert("GAME OVER")
    }
-
-
 }, 10);
+  //function updateScore(delta) {
+    //score += delta * 0.01 
+    //scoreElem.textContent = Math.floor(score)
+  //};
+  function updateScore() {
+    score += 10;
+  }
+  setInterval(updateScore, 1000);
+  document.getElementById("score-container").innerHTML = score;
 
-if (coneLeft < 50 && coneLeft > 0 && pochitaTop >= 430) {
-  score++;
-}
-const scoreCounter = document.createElement("p");
-scoreCounter.innerHTML = "Score: " + score;
-document.body.appendChild(scoreCounter);
+
+  

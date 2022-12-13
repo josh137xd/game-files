@@ -13,8 +13,8 @@
  background-image: url(assets\pochita.gif);
  background-size: 75px 53px;
  position: absolute;
- top: 440px;
-
+ top: 445px;
+ left: 220px;;
 }
 #img2 {
     width: 75px;
@@ -33,14 +33,14 @@
 
 @keyframes jump{
   0% {
-    top: 440px;
+    top: 445px;
   }
 
   30%{
     top: 400px;
   }
   50%{
-    top: 340px;
+    top: 335px;
   }
 
   80%{
@@ -48,7 +48,7 @@
   }
 
   100%{
-    top: 440px
+    top: 445px
   }
 }
 
@@ -61,7 +61,7 @@
   left: 950px;
   background-image: url(assets\traffic-cone.png) ;
   background-size: 50px 75px;
-  animation: block 3s infinite linear;
+  animation: block 2s infinite linear;
 }
 #img3{
 width: 50px;;
@@ -72,7 +72,7 @@ height: 75px;
     left: 950px;
    }
 100%{
-    left: -50px;
+    left: 190px;
 }
 
 
