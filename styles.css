@@ -5,14 +5,14 @@
  margin: auto;
 }
 #city{
-    position: absolute;
+    position: relative;
 }
 #pochita {
  width: 75px; 
  height: 53px; 
  background-image: url(assets\pochita.gif);
  background-size: 75px 53px;
- position: relative;
+ position: absolute;
  top: 440px;
 
 }
@@ -24,7 +24,12 @@
 .jump {
     animation: jump 0.3s linear;
 }
-
+.score{ 
+  position: absolute;
+  font-size: large;
+  top: 15px; 
+  right: 200px; 
+}
 
 @keyframes jump{
   0% {
@@ -51,8 +56,8 @@
  #cone {
   width: 50px;
   height: 75px;
-  position: relative;
-  top: 360px;
+  position: absolute;
+  top: 420px;
   left: 950px;
   background-image: url(assets\traffic-cone.png) ;
   background-size: 50px 75px;

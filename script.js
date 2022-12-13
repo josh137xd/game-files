@@ -1,3 +1,4 @@
+let score = 0
 const pochita = document.getElementById("pochita");
 const cone = document.getElementById("cone");
 // function jump to add jump delay
@@ -33,3 +34,10 @@ let isAlive = setInterval(function(){
 
 
 }, 10);
+
+if (coneLeft < 50 && coneLeft > 0 && pochitaTop >= 430) {
+  score++;
+}
+const scoreCounter = document.createElement("p");
+scoreCounter.innerHTML = "Score: " + score;
+document.body.appendChild(scoreCounter);
