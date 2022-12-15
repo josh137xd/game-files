@@ -6,21 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="module"></script>
 </head>
 <body>
-    <div class="game">
-        <div id="score-container"></div>
-        <div id="city">
-            <img src="assets\ackground.jpg" alt="bacrground">
-        </div>
-        <div id="pochita" >
-            <img src="assets\pochita.gif" alt="pochita-gif" id="img2">
-        </div>
-        <div id="cone">
-            <img src="assets\traffic-cone.png" alt="cone" id="img3" >
-        </div>
-    </div>
-     <script src="script.js"></script>
+    <div class="world" data-game>
+        <div class="score">0</div>
+        <div class="start-screen">Press Any Key To Start</div>
+         <img src="assets\istockphoto-1195021264-1024x1024.png" class="ground" data-ground>
+         <img src="assets\istockphoto-1195021264-1024x1024.png" class="ground" data-ground>
+         <img src="assets\pochita.gif" class="pochita" data-pochita>
+    
 </div>
 </body>
 </html>

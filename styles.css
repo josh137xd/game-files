@@ -1,85 +1,59 @@
-.game {
- width: 1000px; 
- height: 567px; 
- border: 1px solid black;
- margin: auto;
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
 }
-#city{
-    position: relative;
-}
-#pochita {
- width: 75px; 
- height: 53px; 
- background-image: url(assets\pochita.gif);
- background-size: 75px 53px;
- position: absolute;
- top: 445px;
- left: 220px;;
-}
-#img2 {
-    width: 75px;
-    height: 53px;
-  }
 
-.jump {
-    animation: jump 0.3s linear;
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.score{ 
+
+.world {
+  overflow: hidden;
+  position: relative;
+}
+
+.score {
   position: absolute;
-  font-size: large;
-  top: 15px; 
-  right: 200px; 
+  font-size: 3vmin;
+  right: 1vmin;
+  top: 1vmin;
 }
 
-@keyframes jump{
-  0% {
-    top: 445px;
-  }
-
-  30%{
-    top: 400px;
-  }
-  50%{
-    top: 335px;
-  }
-
-  80%{
-    top: 400px;
-  }
-
-  100%{
-    top: 445px
-  }
-}
-
-
- #cone {
-  width: 50px;
-  height: 75px;
+.start-screen {
   position: absolute;
-  top: 420px;
-  left: 950px;
-  background-image: url(assets\traffic-cone.png) ;
-  background-size: 50px 75px;
-  animation: block 2s infinite linear;
-}
-#img3{
-width: 50px;;
-height: 75px;
-}
-@keyframes block{
-   0%{
-    left: 950px;
-   }
-100%{
-    left: 190px;
+  font-size: 5vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.hide {
+  display: none;
+}
 
+.ground {
+  --left: 0;
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  left: calc(var(--left) * 1%)
+}
 
+.pochita {
+  --bottom: 0;
+  position: absolute;
+  left: 1%;
+  height: 30%;
+  bottom: calc(var(--bottom) * 1%);
+}
 
-
-
-
-
+.cone {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 30%;
+  bottom: 0;
 }
