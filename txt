@@ -1,0 +1,158 @@
+var score = 0;
+//const scoreElem = document.querySelector("[data-score]");
+const pochita = document.getElementById("pochita");
+const cone = document.getElementById("cone");
+// function jump to add jump delay
+function jump() {
+  if (pochita.classList != "jump") {
+    pochita.classList.add("jump");
+
+    setTimeout(function () {
+      pochita.classList.remove("jump");
+    }, 300);
+  }
+}
+
+// keybinding jump 
+document.addEventListener("keydown", function (event) {
+  jump();
+});
+
+//getting values from pochita and cone
+
+let isAlive = setInterval(function(){
+// pochita y position
+   let pochitaTop = parseInt(window.getComputedStyle(pochita).getPropertyValue("top")
+   );
+   console.log(pochitaTop);
+// cone x position
+   let coneLeft = parseInt(window.getComputedStyle(cone).getPropertyValue("left")
+   );
+// hit markers
+   if (coneLeft <240 && coneLeft > 190 && pochitaTop >=430){
+   alert("GAME OVER")
+   }
+}, 10);
+  //function updateScore(delta) {
+    //score += delta * 0.01 
+    //scoreElem.textContent = Math.floor(score)
+  //};
+  //function updateScore() {
+    //score += 10;
+  //}
+  //setInterval(updateScore, 1000);
+  //document.getElementById("score-container").innerHTML = score;
+function jumpObstacle(){
+  score += 1;
+}
+if (pochita)
+
+
+// media querrys for resizing 
+
+
+
+.game {
+  width: 1000px; 
+  height: 567px; 
+  border: 1px solid black;
+  margin: auto;
+ }
+  // game scale
+setPixelToGameScale()
+window.addEventListener("resize", setPixelToGameScale)
+
+function setPixelToGameScale() {
+let gameToPixelScale
+if(window.innerWidth / window.innerHeight < WORLD_WIDTH /WORLD_HEIGHT)
+{
+  gameToPixelScale = window.innerWidth / WORLD_WIDTH
+} else {
+  gameToPixelScale = window.innerHeight/ WORLD_HEIGHT
+}
+
+gameElem.style.width = `${WORLD_WIDTH * gameToPixelScale}px`
+gameElem.style.height = `${WORLD_HEIGHT * gameToPixelScale}px`
+}
+
+*{
+  user-select: none
+  }
+  .game{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  #img1{
+  
+    
+  }
+  #pochita {
+   width: 75px; 
+   height: 53px; 
+   background-image: url(assets\pochita.gif);
+   background-size: 75px 53px;
+   position: absolute;
+   top: 615px;
+   left: 480px;;
+  }
+  #img2 {
+      width: 75px;
+      height: 53px;
+    }
+    #score-display{ 
+      position: absolute;
+      font-size: large;
+      top: 15px; 
+      right: 200px; 
+    }
+  .jump {
+      animation: jump 0.3s linear;
+  }
+   
+  @keyframes jump{
+    0% {
+      top: 615px;
+    }
+  
+    30%{
+      top: 580px;
+    }
+    50%{
+      top: 550px;
+    }
+  
+    80%{
+      top: 580px;
+    }
+  
+    100%{
+      top: 615px
+    }
+  }
+  
+  #img3{
+    width: 50px;;
+    height: 75px;
+    }
+   #cone {
+    width: 50px;
+    height: 75px;
+    position: absolute;
+    top: 590px;
+    left: 900px;
+    background-image: url(assets\traffic-cone.png) ;
+    background-size: 50px 75px;
+    animation: block 2s infinite linear;
+  }
+  
+  @keyframes block{
+     0%{
+      left: 900x;
+     }
+  100%{
+      left: 480 px;
+  }
+  }
