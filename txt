@@ -156,3 +156,83 @@ gameElem.style.height = `${WORLD_HEIGHT * gameToPixelScale}px`
       left: 480 px;
   }
   }
+  //part 2 of old JS
+  let points = 0;
+  let intervalId;
+  const gameStatus = document.getElementById("game-status");
+  const score = document.getElementById("score");
+  const scoreDisplay = document.getElementById("score-display");
+  const pochita = document.getElementById("img2");
+  const cone = document.getElementById("img3");
+  
+  // function jump to add jump delay
+  function jump() {
+    if (pochita.classList != "jump") {
+      pochita.classList.add("jump");
+  
+      setTimeout(function () {
+        pochita.classList.remove("jump");
+      }, 300);
+    }
+  }
+   
+    
+  // keybinding jump 
+  document.addEventListener("keydown", function (event) {
+    jump();
+  });
+  
+  //getting values from pochita and cone
+  
+  let isAlive = setInterval(function(){
+    // pochita y position
+    let pochitaTop = parseInt(window.getComputedStyle(pochita).getPropertyValue("top"));
+    // cone x position
+    let coneLeft = parseInt(window.getComputedStyle(cone).getPropertyValue("left"));
+    // hit markers
+    if (coneLeft < 135 && coneLeft > 45 && pochitaTop >= 560){
+      gameOver();
+    }
+  }, 10 );
+   
+    function incrementPoints() {
+      points++;
+      scoreDisplay.innerHTML = points;
+      intervalId = setTimeout(incrementPoints, 1000);
+    }
+    
+    intervalId = setTimeout(incrementPoints, 1000);
+  
+    function startGame() {
+      points = 0; // reset points to 0
+      scoreDisplay.innerHTML = points; // update score display
+      intervalId = setTimeout(incrementPoints, 1000); // start interval
+    }
+    
+    // stop the interval when the game is over
+    function gameOver() {
+      clearTimeout(intervalId);
+      alert("GAME OVER");
+    }
+    const startButton = document.getElementById("start-button");
+  
+  startButton.addEventListener("click", function () {
+    startGame();
+  });
+  function updateGameStatus(status) {
+    gameStatus.innerHTML = status;
+  }
+  
+  function updateScore(points) {
+    score.innerHTML = points;
+  }
+  function gameOver() {
+    clearTimeout(intervalId);
+    updateGameStatus("Game Over");
+  }
+  function incrementPoints() {
+    points++;
+    updateScore(points);
+    intervalId = setTimeout(incrementPoints, 1000);
+  }
+  
